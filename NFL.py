@@ -4,13 +4,7 @@ import numpy as np
 import altair as alt
 import requests as rq
 from io import BytesIO
-from openpyxl import Workbook
 
-workbook = Workbook()
-
-with NamedTemporaryFile() as tmp:
-     workbook.save(tmp.name)
-     data = BytesIO(tmp.read())
 
 st.download_button("Retrieve file",
      data=data,
