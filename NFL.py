@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import altair as alt
 import requests as rq
+import openpyxl
 from io import BytesIO
 from openpyxl import Workbook
 
