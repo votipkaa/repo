@@ -4,6 +4,18 @@ import numpy as np
 import altair as alt
 import requests as rq
 from io import BytesIO
+from openpyxl import Workbook
+
+workbook = Workbook()
+
+with NamedTemporaryFile() as tmp:
+     workbook.save(tmp.name)
+     data = BytesIO(tmp.read())
+
+st.download_button("Retrieve file",
+     data=data,
+     mime='xlsx',
+     file_name="https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx")
 
 url = "https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx?raw=true"
 NFL_DATA = rq.get(url).content
