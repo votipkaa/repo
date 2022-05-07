@@ -6,7 +6,7 @@ import altair as alt
 st.title('NFL Project')
 st.markdown("## Bennie's First Data Science Project to Join the Coastal Elite 🏈")
 
-NFL_DATA = 'NFL Stats 2021-22 Season.xlsx'
+NFL_DATA = 'votipkaa/repo/NFL Stats 2021-22 Season.xlsx'
 points = st.slider("How many points scored?",0,900,10)
 
 @st.cache(persist=True)
