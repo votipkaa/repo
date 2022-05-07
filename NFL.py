@@ -44,8 +44,6 @@ def points_allowed(nrows):
 
 points_allowed_data = points_allowed(32)
 
-https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx
-
 st.write("Points Allowed",points)
 st.bar_chart(points_allowed_data['Total Points Allowed'])
 st.write("Sorted by points differential:",points_allowed_data.sort_values('Points Differential',ascending=False))
