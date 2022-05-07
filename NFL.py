@@ -4,9 +4,11 @@ import numpy as np
 import altair as alt
 import requests as rq
 from io import BytesIO
+from openpyxl import Workbook
 
 url = "https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx?raw=true"
 NFL_DATA = rq.get(url).content
+
 
 st.title('NFL Project')
 st.markdown("## Bennie's First Data Science Project to Join the Coastal Elite 🏈")
