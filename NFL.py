@@ -3,16 +3,20 @@ import pandas as pd
 import numpy as np
 import altair as alt
 import requests as rq
+import io
 
 st.title('NFL Project')
 st.markdown("## Bennie's First Data Science Project to Join the Coastal Elite 🏈")
 
-NFL_DATA = 'https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx'
+NFL_URL = 'https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx'
+
+NFL_DATA = rq.get(NFL_URL).content)
+
 points = st.slider("How many points scored?",0,900,10)
 
 @st.cache(persist=True)
 def load_data(nrows):
-    data = pd.read_excel(NFL_DATA, sheet_name='Teams', nrows=nrows)
+    data = pd.read_excel(io.StringIO(NFL_DATA.decode('utf-8'), sheet_name='Teams', nrows=nrows)
     data = data.sort_values('Total Points Scored',ascending=False)
     data = data.set_index('Teams')
     data = data.dropna(axis=0,how='all')
