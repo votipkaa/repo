@@ -8,7 +8,7 @@ import io
 st.title('NFL Project')
 st.markdown("## Bennie's First Data Science Project to Join the Coastal Elite 🏈")
 
-NFL_URL = 'https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx'
+NFL_URL = 'https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx?raw=true'
 
 NFL_DATA = rq.get(NFL_URL).content
 
