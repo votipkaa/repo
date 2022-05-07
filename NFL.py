@@ -10,7 +10,7 @@ st.markdown("## Bennie's First Data Science Project to Join the Coastal Elite ðŸ
 
 NFL_URL = 'https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx'
 
-NFL_DATA = rq.get(NFL_URL).content)
+NFL_DATA = rq.get(NFL_URL).content
 
 points = st.slider("How many points scored?",0,900,10)
 
