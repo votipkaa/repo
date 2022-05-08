@@ -2,15 +2,13 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import altair as alt
-import requests as rq
-from io import BytesIO
-import openpyxl
+import requests
 
 
 url = "https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx?raw=true"
-workbook=openpxyl.load_workbook(url)
-NFL_DATA = rq.get(workbook).content
-
+r = requests.get(url)
+open('temp.xls', 'wb').write(r.content)
+NFL_DATA = pd.read_excel('temp.xls')
 
 st.title('NFL Project')
 st.markdown("## Bennie's First Data Science Project to Join the Coastal Elite 🏈")
