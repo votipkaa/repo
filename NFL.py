@@ -4,7 +4,7 @@ import numpy as np
 import altair as alt
 import requests as rq
 from io import BytesIO
-from openpyxl import load_workbook
+import openpyxl
 
 
 url = "https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx?raw=true"
