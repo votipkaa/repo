@@ -19,7 +19,7 @@ points = st.slider("How many points scored?",0,900,10)
 
 @st.cache(persist=True)
 def load_data(nrows):
-    data = pd.read_excel(BytesIO(NFL_DATA), sheet_name='Teams', nrows=nrows)
+    data = pd.read_excel(NFL_DATA, sheet_name='Teams', nrows=nrows)
     data = data.sort_values('Total Points Scored',ascending=False)
     data = data.set_index('Teams')
     data = data.dropna(axis=0,how='all')
@@ -37,7 +37,7 @@ points = st.number_input("Teams that allowed fewer than this many points:",0,100
 
 @st.cache(persist=True)
 def points_allowed(nrows):
-    points_allowed_data = pd.read_excel(BytesIO(NFL_DATA), sheet_name='Teams', nrows=nrows)
+    points_allowed_data = pd.read_excel(NFL_DATA, sheet_name='Teams', nrows=nrows)
     points_allowed_data = points_allowed_data.sort_values('Total Points Allowed',ascending=False)
     points_allowed_data = points_allowed_data.set_index('Teams')
     points_allowed_data = points_allowed_data.dropna(axis=0,how='all')
