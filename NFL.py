@@ -43,5 +43,5 @@ def points_allowed(nrows):
 points_allowed_data = points_allowed(32)
 
 st.write("Points Allowed",points)
-st.bar_chart(points_allowed_data)
+st.bar_chart(points_allowed_data['Total Points Allowed'])
 st.write(points_allowed_data)
