@@ -8,8 +8,8 @@ from io import BytesIO
 st.title('NFL Project')
 st.markdown("## Bennie's First Data Science Project to Join the Coastal Elite 🏈")
 
-NFL_DATA = 'https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx?raw=true'
-data = pd.read_excel(NFL_DATA, sheet_name='Teams', nrows=nrows)
+NFL_DATA = 'https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.csv?raw=true'
+data = pd.read_csv(NFL_DATA, sheet_name='Teams', nrows=nrows)
 
 st.write(data)
 
