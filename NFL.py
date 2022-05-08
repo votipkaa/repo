@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import altair as alt
 import requests
+import pip
+pip.main(["install", "openpyxl"])
 
 
 url = "https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx?raw=true"
