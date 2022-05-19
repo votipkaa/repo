@@ -28,6 +28,9 @@ st.write("Points Scored",points)
 st.bar_chart(data)
 st.write(data)
 
+
+st.write("--")
+
 points = st.number_input("Teams that allowed fewer than this many points:",0,1000,900)
 
 @st.cache(persist=True)
@@ -46,6 +49,8 @@ st.write("Points Allowed",points)
 st.bar_chart(points_allowed_data['Total Points Allowed'])
 st.write(points_allowed_data)
 
+st.write("--")
+
 wins = st.number_input("Wins at home:",0,16,0)
 
 @st.cache(persist=True)
@@ -63,6 +68,8 @@ home_wins_data = home_wins(32)
 st.write("Wins at Home",wins)
 st.bar_chart(home_wins_data['Total Wins @ Home'])
 st.write(home_wins_data)
+
+st.write("--")
 
 awaywins = st.number_input("Wins playing Away:",0,16,0)
 
