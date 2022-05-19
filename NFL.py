@@ -61,7 +61,7 @@ def home_wins(nrows):
 home_wins_data = home_wins(32)
 
 st.write("Wins at Home",wins)
-st.bar_chart(home_wins_data['Total Wins at Home'])
+st.bar_chart(home_wins_data['Total Wins @ Home'])
 st.write(home_wins_data)
 
 awaywins = st.number_input("Wins playing Away:",0,16,0)
