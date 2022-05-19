@@ -60,6 +60,22 @@ def home_wins(nrows):
 
 home_wins_data = home_wins(32)
 
-st.write("Wins at Home",wins)
-st.bar_chart(home_wins_data['Total Wins @ Home'])
-st.write(home_wins_data)
+st.write("Wins Away",awaywins)
+st.bar_chart(away_wins_data['Total Wins Away'])
+st.write(away_wins_data)
+
+@st.cache(persist=True)
+def away_wins(nrows):
+    away_wins_data = pd.read_excel(NFL_DATA, sheet_name='Teams', nrows=nrows)
+    away_wins_data = away_wins_data.sort_values('Total Wins Away',ascending=False)
+    away_wins_data = away_wins_data.set_index('Teams')
+    away_wins_data = away_wins_data.dropna(axis=0,how='all')
+    away_wins_data = away_wins_data[['Total Wins Away','Average Points Away','Average Points @ Home']]
+    away_wins_data = away_wins_data[away_wins_data['Total Wins Away']>=awaywins]
+    return away_wins_data
+
+away_wins_data = away_wins(32)
+
+st.write("Wins Away",awaywins)
+st.bar_chart(away_wins_data['Total Wins Away'])
+st.write(away_wins_data)
