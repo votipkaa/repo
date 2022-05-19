@@ -58,7 +58,7 @@ def home_wins(nrows):
     home_wins_data = home_wins_data[home_wins_data['Total Wins @ Home']>=wins]
     return home_wins_data
 
-home_wins_data = home_wins_data(32)
+home_wins_data = home_wins(32)
 
 st.write("Wins at Home",wins)
 st.bar_chart(home_wins_data['Total Wins @ Home'])
