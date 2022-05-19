@@ -88,3 +88,24 @@ away_wins_data = away_wins(32)
 st.write("Wins Away",awaywins)
 st.bar_chart(away_wins_data['Total Wins Away'])
 st.write(away_wins_data)
+
+st.write("---------------------------------------------------------")
+
+bigwin = st.number_input("Biggest Single Game Win:",0,40,0)
+
+@st.cache(persist=True)
+def biggest_win(nrows):
+    biggest_win_data = pd.read_excel(NFL_DATA, sheet_name='Teams', nrows=nrows)
+    biggest_win_data = biggest_win_data.sort_values('Biggest Win',ascending=False)
+    biggest_win_data = biggest_win_data.set_index('Teams')
+    biggest_win_data = biggest_win_data.dropna(axis=0,how='all')
+    biggest_win_data = biggest_win_data['Biggest Win]
+    biggest_win_data = biggest_win_data[away_wins_data['Biggest']>=bigwin]
+    return biggest_win_data
+
+                                      
+biggest_win_data = biggest_wins(32)
+
+st.write("Biggest Single Game Win",bigwin)
+st.bar_chart(biggest_win_data['Biggest Win'])
+st.write(biggest_win_data)
