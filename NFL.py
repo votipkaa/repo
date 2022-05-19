@@ -60,9 +60,11 @@ def home_wins(nrows):
 
 home_wins_data = home_wins(32)
 
-st.write("Wins Away",awaywins)
-st.bar_chart(away_wins_data['Total Wins Away'])
-st.write(away_wins_data)
+st.write("Wins at Home",wins)
+st.bar_chart(home_wins_data['Total Wins at Home'])
+st.write(home_wins_data)
+
+awaywins = st.number_input("Wins playing Away:",0,16,0)
 
 @st.cache(persist=True)
 def away_wins(nrows):
