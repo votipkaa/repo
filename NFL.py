@@ -99,8 +99,8 @@ def biggest_win(nrows):
     biggest_win_data = biggest_win_data.sort_values('Biggest Win',ascending=False)
     biggest_win_data = biggest_win_data.set_index('Teams')
     biggest_win_data = biggest_win_data.dropna(axis=0,how='all')
-    biggest_win_data = biggest_win_data['Biggest Win]
-    biggest_win_data = biggest_win_data[away_wins_data['Biggest']>=bigwin]
+    biggest_win_data = biggest_win_data['Biggest Win']
+    biggest_win_data = biggest_win_data[away_wins_data['Biggest Win']>=bigwin]
     return biggest_win_data
 
                                       
