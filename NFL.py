@@ -6,7 +6,7 @@ import requests as rq
 from io import BytesIO
 
 st.title('NFL Project')
-st.markdown("## Bennie's First Data Science Project to Join the Coastal Elite 🏈")
+st.markdown("## 2021-22 Stats 🏈")
 
 NFL_DATA = 'https://github.com/votipkaa/repo/blob/main/NFL%20Stats%202021-22%20Season.xlsx?raw=true'
 
@@ -45,3 +45,21 @@ points_allowed_data = points_allowed(32)
 st.write("Points Allowed",points)
 st.bar_chart(points_allowed_data['Total Points Allowed'])
 st.write(points_allowed_data)
+
+wins = st.number_input("Wins at home:",0,16,0)
+
+@st.cache(persist=True)
+def home_wins(nrows):
+    home_wins_data = pd.read_excel(NFL_DATA, sheet_name='Teams', nrows=nrows)
+    home_wins_data = home_wins_data.sort_values('Total Wins @ Home',ascending=False)
+    home_wins_data = home_wins_data.set_index('Teams')
+    home_wins_data = home_wins_data.dropna(axis=0,how='all')
+    home_wins_data = home_wins_data[['Total Wins @ Home']]
+    home_wins_data = home_wins_data[home_wins_data['Total Wins @ Home']>=wins]
+    return home_wins_data
+
+home_wins_data = home_wins_data(32)
+
+st.write("Wins at Home",wins)
+st.bar_chart(home_wins_data['Total Wins @ Home'])
+st.write(home_wins_data)
