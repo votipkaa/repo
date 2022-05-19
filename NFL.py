@@ -54,7 +54,7 @@ def home_wins(nrows):
     home_wins_data = home_wins_data.sort_values('Total Wins @ Home',ascending=False)
     home_wins_data = home_wins_data.set_index('Teams')
     home_wins_data = home_wins_data.dropna(axis=0,how='all')
-    home_wins_data = home_wins_data[['Total Wins @ Home','Average Points @ Home']]
+    home_wins_data = home_wins_data[['Total Wins @ Home','Average Points @ Home','Average Points Away']]
     home_wins_data = home_wins_data[home_wins_data['Total Wins @ Home']>=wins]
     return home_wins_data
 
