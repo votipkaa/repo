@@ -148,5 +148,5 @@ def total_yard(nrows):
 ty_data = total_yard(32)
 
 st.write("Total Yards of Offense",totalyards)
-st.bar_chart(ty_data)
+st.bar_chart(ty_data['Total Yards'])
 st.write(ty_data)
