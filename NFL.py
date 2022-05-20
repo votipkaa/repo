@@ -26,7 +26,7 @@ data = load_data(32)
 
 
 st.bar_chart(data)
-st.write("Points Scored",points)
+st.write("Points Scored (click column heads to sort)",points)
 st.write(data)
 
 
@@ -48,7 +48,7 @@ points_allowed_data = points_allowed(32)
 
 
 st.bar_chart(points_allowed_data['Total Points Allowed'])
-st.write("Points Allowed",points)
+st.write("Points Allowed (click column heads to sort)",points)
 st.write(points_allowed_data)
 
 st.write("---------------------------------------------------------")
@@ -69,7 +69,7 @@ home_wins_data = home_wins(32)
 
 
 st.bar_chart(home_wins_data['Total Wins @ Home'])
-st.write("Wins at Home",wins)
+st.write("Wins at Home (click column heads to sort)",wins)
 st.write(home_wins_data)
 
 st.write("---------------------------------------------------------")
@@ -90,7 +90,7 @@ away_wins_data = away_wins(32)
 
 
 st.bar_chart(away_wins_data['Total Wins Away'])
-st.write("Wins Away",awaywins)
+st.write("Wins Away (click column heads to sort)",awaywins)
 st.write(away_wins_data)
 
 st.write("---------------------------------------------------------")
@@ -154,5 +154,5 @@ def total_yard(nrows):
 ty_data = total_yard(32)
 
 st.bar_chart(ty_data['Total Yards'])
-st.write("Total Yards of Offense",totalyards)
+st.write("Total Yards of Offense (click column heads to sort)",totalyards)
 st.write(ty_data)
