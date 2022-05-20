@@ -24,8 +24,9 @@ def load_data(nrows):
 
 data = load_data(32)
 
-st.write("Points Scored",points)
+
 st.bar_chart(data)
+st.write("Points Scored",points)
 st.write(data)
 
 
@@ -45,8 +46,9 @@ def points_allowed(nrows):
 
 points_allowed_data = points_allowed(32)
 
-st.write("Points Allowed",points)
+
 st.bar_chart(points_allowed_data['Total Points Allowed'])
+st.write("Points Allowed",points)
 st.write(points_allowed_data)
 
 st.write("---------------------------------------------------------")
@@ -65,8 +67,9 @@ def home_wins(nrows):
 
 home_wins_data = home_wins(32)
 
-st.write("Wins at Home",wins)
+
 st.bar_chart(home_wins_data['Total Wins @ Home'])
+st.write("Wins at Home",wins)
 st.write(home_wins_data)
 
 st.write("---------------------------------------------------------")
@@ -85,8 +88,9 @@ def away_wins(nrows):
 
 away_wins_data = away_wins(32)
 
-st.write("Wins Away",awaywins)
+
 st.bar_chart(away_wins_data['Total Wins Away'])
+st.write("Wins Away",awaywins)
 st.write(away_wins_data)
 
 st.write("---------------------------------------------------------")
@@ -106,8 +110,9 @@ def biggest_win(nrows):
                                       
 biggest_win_data = biggest_win(32)
 
-st.write("Biggest Single Game Win",bigwin)
+
 st.bar_chart(biggest_win_data)
+st.write("Biggest Single Game Win",bigwin)
 st.write(biggest_win_data)
 
 st.write("---------------------------------------------------------")
@@ -126,8 +131,9 @@ def points_diff(nrows):
                                   
 pd_data = points_diff(32)
 
-st.write("Average Points Differential",pointsdiff)
+
 st.bar_chart(pd_data)
+st.write("Average Points Differential",pointsdiff)
 st.write(pd_data)
 
 st.write("---------------------------------------------------------")
