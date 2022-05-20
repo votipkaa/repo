@@ -104,7 +104,7 @@ def biggest_win(nrows):
     return biggest_win_data
 
                                       
-biggest_win_data = biggest_wins(32)
+biggest_win_data = biggest_win(32)
 
 st.write("Biggest Single Game Win",bigwin)
 st.bar_chart(biggest_win_data['Biggest Win'])
