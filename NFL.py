@@ -109,3 +109,24 @@ biggest_win_data = biggest_win(32)
 st.write("Biggest Single Game Win",bigwin)
 st.bar_chart(biggest_win_data)
 st.write(biggest_win_data)
+
+st.write("---------------------------------------------------------")
+
+pointsdiff = st.number_input("Average Points Differential:",-30,30,-30)
+
+@st.cache(persist=True)
+def points_diff(nrows):
+    pd_data = pd.read_excel(NFL_DATA, sheet_name='Teams', nrows=nrows)
+    pd_data = pd_data.sort_values('Average Points Differential',ascending=False)
+    pd_data = pd_data.set_index('Teams')
+    pd_data = pd_data.dropna(axis=0,how='all')
+    pd_data = pd_data['Average Points Differential']
+    pd_data = pd_data[pd_data>=pointsdiff]
+    return pd_data
+
+                                      
+pd_data = points_diff(32)
+
+st.write("Average Points Differential",pointsdiff)
+st.bar_chart(pd_data)
+st.write(pd_data)
