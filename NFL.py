@@ -141,7 +141,7 @@ def total_yard(nrows):
     ty_data = ty_data.set_index('Teams')
     ty_data = ty_data.dropna(axis=0,how='all')
     ty_data = ty_data[['Total Yards','Total Yards Allowed']]
-    ty_data = ty_data[tr_data['Total Yards']>=totalyards]
+    ty_data = ty_data[ty_data['Total Yards']>=totalyards]
     return ty_data
 
                                       
