@@ -5,8 +5,6 @@ import altair as alt
 import requests as rq
 from io import BytesIO
 
-st.set_option('wideMode' , True)
-
 st.title('NFL Project')
 st.markdown("## 2021-22 Stats 🏈")
 
