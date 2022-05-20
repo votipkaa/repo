@@ -112,8 +112,6 @@ st.write(biggest_win_data)
 
 st.write("---------------------------------------------------------")
 
-
-
 pointsdiff = st.number_input("Average Points Differential:",-30,30,-30)
 
 @st.cache(persist=True)
@@ -125,8 +123,7 @@ def points_diff(nrows):
     pd_data = pd_data['Average Points Differential']
     pd_data = pd_data[pd_data>=pointsdiff]
     return pd_data
-
-                                      
+                                  
 pd_data = points_diff(32)
 
 st.write("Average Points Differential",pointsdiff)
@@ -139,7 +136,7 @@ totalyards = st.number_input("Total Yards of Offense:",0,8000,0)
 
 @st.cache(persist=True)
 def total_yard(nrows):
-    ty_data = ty.read_excel(NFL_DATA, sheet_name='Teams', nrows=nrows)
+    ty_data = pd.read_excel(NFL_DATA, sheet_name='Teams', nrows=nrows)
     ty_data = ty_data.sort_values('Total Yards',ascending=False)
     ty_data = ty_data.set_index('Teams')
     ty_data = ty_data.dropna(axis=0,how='all')
