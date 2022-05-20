@@ -112,6 +112,25 @@ st.write(biggest_win_data)
 
 st.write("---------------------------------------------------------")
 
+totalyards = st.number_input("Total Yards of Offense:",0,8000,0)
+
+@st.cache(persist=True)
+def total_yard(nrows):
+    ty_data = ty.read_excel(NFL_DATA, sheet_name='Teams', nrows=nrows)
+    ty_data = ty_data.sort_values('Total Yards',ascending=False)
+    ty_data = ty_data.set_index('Teams')
+    ty_data = ty_data.dropna(axis=0,how='all')
+    ty_data = ty_data[['Total Yards','Total Yards Allowed']]
+    ty_data = ty_data[tr_data['Total Yards']>=totalyards]
+    return pd_data
+
+                                      
+ty_data = total_yard(32)
+
+st.write("Total Yards of Offense",totalyards)
+st.bar_chart(ty_data)
+st.write(ty_data)
+
 pointsdiff = st.number_input("Average Points Differential:",-30,30,-30)
 
 @st.cache(persist=True)
